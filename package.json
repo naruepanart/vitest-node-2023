@@ -1,0 +1,19 @@
+{
+  "name": "@vitest/example-test",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
+  },
+  "devDependencies": {
+    "@vitest/coverage-istanbul": "^0.28.3",
+    "@vitest/ui": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}
