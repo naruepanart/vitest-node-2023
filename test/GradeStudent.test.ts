@@ -1,23 +1,24 @@
-import { describe, expect, it } from 'vitest';
-import { GradeStudent } from '../src/GradeStudent';
+import { describe, it, assert } from "vitest";
+import { GradeStudent } from "../src/GradeStudent";
 
-const testCases = [
-  { score: 95, expected: 'A' },
-  { score: 85, expected: 'B' },
-  { score: 75, expected: 'C' },
-  { score: 65, expected: 'D' },
-  { score: 55, expected: 'F' },
-];
+describe("Calculator Tests", () => {
+  const testCases = [
+    { score: 90, expected: "A" },
+    { score: 91, expected: "A" },
+    { score: 80, expected: "B" },
+    { score: 89, expected: "B" },
+    { score: 70, expected: "C" },
+    { score: 79, expected: "C" },
+    { score: 60, expected: "D" },
+    { score: 69, expected: "D" },
+    { score: 0, expected: "F" },
+    { score: 59, expected: "F" },
+  ];
 
-describe('Calculator Tests', () => {
-  for (let i = 0; i < testCases.length; i++) {
-    const { score, expected } = testCases[i];
+  testCases.forEach((tc) => {
+    const { score, expected } = tc;
     it(`${score} returns ${expected}`, () => {
-      expect(GradeStudent(score)).toBe(expected);
+      assert.equal(GradeStudent(score), expected);
     });
-  }
+  });
 });
-
-/* test('GradeStudent()', () => {
-  expect(GradeStudent(95)).toBe('A');
-}); */
